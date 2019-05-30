@@ -1,80 +1,154 @@
+require: rubocop-performance
+
 AllCops:
+  RubyInterpreters:
+    - ruby
+    - rake
+  Include:
+    - '**/*.rb'
+    - '**/*.ruby'
+    - '**/*.jbuilder'
+    - '**/*.rake'
+    - '**/*.ru'
+    - '**/Gemfile'
   Exclude:
+    - 'node_modules/**/*'
     - 'vendor/**/*'
-    - 'bin/**/*'
-    - 'spec/fixtures/**/*'
+    - '.git/**/*'
+    - 'public/uploads/**/*'
     - 'db/schema.rb'
-    - 'db/seeds.rb'
-  TargetRubyVersion: 2.3
-
-Rails:
-  Enabled: true
-
-# 子Class/Moduleの指定方法
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-# 行の長さの制限を80->120に変更
-Metrics/LineLength:
-  Max: 120
-  Exclude:
-    - 'config/initializers/*'
-
-Style/Documentation:
-  Enabled: false
-
-Layout/SpaceBeforeFirstArg:
-  Enabled: false
-
-Metrics/MethodLength:
-  Max: 50
-
-Style/AsciiComments:
-  Enabled: false
-
-Style/MultilineBlockChain:
-  Enabled: false
-
-Metrics/AbcSize:
-  Max: 22
-  Exclude:
-    - 'db/migrate/*'
-
-Metrics/BlockLength:
-  Exclude:
-    - 'config/routes.rb'
-    - 'app/admin/*'
-    - 'config/environments/*'
-
-Rails/Output:
-  Exclude:
-
-Security/MarshalLoad:
-  Exclude:
-
 Bundler/OrderedGems:
   Enabled: false
-
-Metrics/ParameterLists:
+Metrics:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Enabled: true
   Exclude:
-
+    - spec/**/*.rb
+Lint/Void:
+  Enabled: true
+  Exclude:
+    - spec/**/*.rb
+Lint/AssignmentInCondition:
+  Exclude:
+    - app/controllers/oauths_controller.rb
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+Style/DateTime:
+  Enabled: false
+Style/RaiseArgs:
+  Enabled: false
+Style/TernaryParentheses:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/ColonMethodCall:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/CaseEquality:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
+Style/FormatStringToken:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Style/InverseMethods:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/PerlBackrefs:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/BracesAroundHashParameters:
+  Enabled: false
+Style/SignalException:
+  Enabled: false
+Style/RescueModifier:
+  Enabled: false
+Style/RescueStandardError:
+  Enabled: true
+  Exclude:
+    - lib/tasks/**/*.rake
 Style/NumericPredicate:
+  Enabled: false
+Style/ZeroLengthPredicate:
+  Enabled: false
+Style/GuardClause:
+  Enabled: true
   Exclude:
-
-Rails/NotNullColumn:
-  Exclude:
-    - 'db/**/*.rb'
-
-Metrics/ClassLength:
-  Max: 150
-  Exclude:
-    - 'test/**/*'
-
+    - bin/*
+Style/MixinUsage:
+  Enabled: false
+Layout/CaseIndentation:
+  Enabled: false
+Layout/MultilineBlockLayout:
+  Enabled: false
+Layout/AlignParameters:
+  Enabled: false
+Layout/ElseAlignment:
+  Enabled: false
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+Layout/IndentFirstHashElement:
+  Enabled: false
+Layout/LeadingCommentSpace:
+  Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+Layout/SpaceAroundOperators:
+  Enabled: false
+Layout/EmptyLines:
+  Enabled: false
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Rails/ReversibleMigration:
+  Enabled: false
 Rails/SkipsModelValidations:
   Enabled: false
-
-Rails/HasAndBelongsToMany:
+Rails/InverseOf:
+  Enabled: false
+Rails/UnknownEnv:
+  Enabled: false
+Rails/CreateTableWithTimestamps:
   Enabled: false
