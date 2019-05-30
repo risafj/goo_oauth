@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'top#index'
+  get 'pages/index'
+  root to: 'pages#index'
 
   post 'oauth/callback', to: 'oauths#callback'
   get 'oauth/callback', to: 'oauths#callback'
