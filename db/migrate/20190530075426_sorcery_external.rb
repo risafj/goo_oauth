@@ -7,6 +7,6 @@ class SorceryExternal < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
-    add_index :authentications, [:provider, :uid], unique: true
+    add_index :authentications, %i[provider uid], unique: true
   end
 end
