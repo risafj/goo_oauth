@@ -1,24 +1,4 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I'm implementing an OAuth login system in another Rails app. This is an isolated repo just to try building the OAuth system using [`Sorcery`](https://github.com/Sorcery/sorcery)'s external submodule.
+I've mostly followed the gem's `external` submodule [tutorial](https://github.com/NoamB/sorcery/wiki/External).
